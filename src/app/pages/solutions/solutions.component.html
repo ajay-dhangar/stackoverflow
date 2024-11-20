@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="content-wrapper" *ngIf="questionObj != undefined">
+        <div class="title-container">
+            This is my question, someone please give me an answer.
+        </div>
+      <mat-card class="question-card" *ngFor="let solution of questionObj.solutions;let i = index">
+        <mat-card-content>
+            <div class="solution-container">
+                <div class="arrows-container">
+                    <button (click)="vote(i, 1)" [class.colored-icon]="solution.upvotes.indexOf(userService.user.id)>=0" mat-icon-button><mat-icon>expand_less</mat-icon></button>
+                    {{solution.upvotes.length - solution.downvotes.length}}
+                    <button (click)="vote(i, -1)" [class.colored-icon]="solution.downvotes.indexOf(userService.user.id)>=0" mat-icon-button><mat-icon>expand_more</mat-icon></button>
+                </div>
+                <div class="data-container">
+                    <p class="username">{{solution.username}}</p>
+                    <p>
+                      {{solution.solution}}
+                    </p>
+                </div>
+            </div>
+
+        </mat-card-content>
+      </mat-card>
+
+      <mat-form-field appearance="fill">
+        <textarea [(ngModel)]="solutionText" matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Type your solution..."></textarea>
+      </mat-form-field>
+      <div class="new-post-actions-container">
+        <button (click)="postSolution()" [disabled]="solutionText.trim() == ''" mat-raised-button class="post-button">Post</button>
+      </div>
+    </div>
+  </div>
+  

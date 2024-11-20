@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="form-container">
+        <div class="title">Create Account</div>
+        <form [formGroup]="createAccountForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter you email</mat-label>
+                <input matInput formControlName="email"/>
+                <mat-error>
+                    {{createAccountForm.controls.email.hasError('required')?'Email is required':'Enter a vaild email'}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter you username</mat-label>
+                <input matInput formControlName="username" />
+                <mat-error>
+                    {{createAccountForm.controls.username.hasError('required')?'Username is required':'Username cannot be longer than 12 characters'}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter you password</mat-label>
+                <input type="password" matInput formControlName="password" />
+                <mat-error>
+                    {{createAccountForm.controls.password.hasError('required')?"Password is required":"Password should be atleast 6 characters long"}}
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <div class="buttons-container">
+            <button mat-raised-button class="login-button" [disabled]="createAccountForm.invalid" (click)="createAccount()">
+                Create Account
+            </button>
+            <p>OR</p>
+            <button routerLink="/login" mat-button>Login</button>
+        </div>
+    </div>
+</div>

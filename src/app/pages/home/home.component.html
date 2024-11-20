@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="content-wrapper">
+    <mat-form-field appearance="fill">
+      <textarea [(ngModel)]="question" matInput cdkTextareaAutosize cdkAutosizeMinRows="5" placeholder="Ask your question..."></textarea>
+    </mat-form-field>
+    <div class="new-post-actions-container">
+      <button (click)="post()" mat-raised-button [disabled]="question.trim() == ''" class="post-button">Post</button>
+    </div>
+
+    <mat-card *ngFor="let question of questionsList" class="question-card" [routerLink]="'/view-solutions/' + question.id">
+      <mat-card-content>
+        <p class="username">{{question.username}}</p>
+        <p>
+          {{question.question}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

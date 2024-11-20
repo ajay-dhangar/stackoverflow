@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "email": "sricharan@gmail.com",
+      "username": "sricharan",
+      "password": "sricharan",
+      "id": 1
+    },
+    {
+      "email": "charan@gmail.com",
+      "username": "charan",
+      "password": "sricharan",
+      "id": 2
+    }
+  ],
+  "questions": [
+    {
+      "username": "sricharan",
+      "question": "This is my first question",
+      "solutions": [
+        {
+          "username": "sricharan",
+          "solution": "this is the solution",
+          "upvotes": [],
+          "downvotes": [
+            1
+          ]
+        },
+        {
+          "username": "sricharan",
+          "solution": "this is another solution",
+          "upvotes": [],
+          "downvotes": [
+            1
+          ]
+        }
+      ],
+      "id": 1
+    },
+    {
+      "username": "sricharan",
+      "question": "This is the second question",
+      "solutions": [],
+      "id": 2
+    },
+    {
+      "username": "sricharan",
+      "question": "this is my third question",
+      "solutions": [],
+      "id": 3
+    },
+    {
+      "username": "sricharan",
+      "question": "How to user services in anuglar?",
+      "solutions": [],
+      "id": 4
+    }
+  ]
+}
